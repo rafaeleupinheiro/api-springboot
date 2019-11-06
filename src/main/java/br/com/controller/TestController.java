@@ -14,10 +14,20 @@ public class TestController {
 
   @ResponseBody
   @RequestMapping(
-      value = "/",
+      value = "/home",
       method = RequestMethod.GET,
       produces = MediaType.APPLICATION_JSON_VALUE)
-  public Response test() {
+  public Response home() {
     return Response.ok().build();
+  }
+
+  @ResponseBody
+  @RequestMapping(
+      value = "/users",
+      method = RequestMethod.GET,
+      produces = MediaType.APPLICATION_JSON_VALUE)
+  public Response users() {
+    return Response.ok("{\"users\":[{\"name\":\"Lucas\", \"country\":\"Brazil\"}," +
+        "{\"name\":\"Jackie\",\"country\":\"China\"}]}").build();
   }
 }
