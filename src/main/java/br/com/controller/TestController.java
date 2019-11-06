@@ -17,7 +17,7 @@ public class TestController {
       value = "/",
       method = RequestMethod.GET,
       produces = MediaType.APPLICATION_JSON_VALUE)
-  public Response testeAtividade() {
+  public Response test() {
     return Response.ok().build();
   }
 }
