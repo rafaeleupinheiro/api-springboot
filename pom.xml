@@ -22,6 +22,24 @@
     <jersey.version>1.19</jersey.version>
   </properties>
 
+  <profiles>
+    <profile>
+      <id>dev</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <activatedProperties>dev</activatedProperties>
+      </properties>
+    </profile>
+    <profile>
+      <id>release</id>
+      <properties>
+        <activatedProperties>release</activatedProperties>
+      </properties>
+    </profile>
+  </profiles>
+
   <dependencies>
     <!-- Spring -->
     <dependency>
@@ -105,4 +123,12 @@
     <!-- End Jersey -->
   </dependencies>
 
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  </build>
 </project>
